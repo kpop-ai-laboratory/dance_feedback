@@ -1,10 +1,13 @@
 ## 📑 목차
 
 데이터 준비 (Data Preparation)
+
 스켈레톤 추출 (Skeleton Extraction)
+
 유사도 모듈 (Similarity Module)
-추가 개발 항목 (Next Steps)
-라이선스 (License)
+
+[to-be]
+
 
 📂 폴더 구조
 
