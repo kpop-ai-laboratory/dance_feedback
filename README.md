@@ -23,8 +23,8 @@ youtube 영상 추출 - <etc/ down_youtube.py> <br>
 -> media pipe로 key points 추출 후 원래 이미지 사이즈로 북구<br>
 <yolo_and_media_pose.py>
 5. 유사도 모듈<br><br>
-Procrustes 정렬, 각도 비교, 궤적 분석 등을 통해 동작 유사도 산출
-기준 안무(선생님) vs 연습생 영상 비교 후 자동 피드백 캡션 생성 <similarity/>
+Procrustes 정렬, 각도 비교, 궤적 분석 등을 통해 동작 유사도 산출<br>
+기준 안무(선생님) vs 연습생 영상 비교 후 자동 피드백 캡션 생성 <similarity/><br>
 
 6. [to-be] Caption 생성 및 웹구현<br><br>
 자동 교정 문구 생성 : VLM gpt-4o 사용 or VLM 모델 학습<br>
