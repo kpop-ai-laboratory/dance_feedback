@@ -2,13 +2,15 @@
 
 #### 📑 목차
 
-1. 데이터 준비 (Data Preparation)
+1. 데이터 준비 
 
-2. 스켈레톤 추출 (Skeleton Extraction)
+2. 영상 동기화 
 
-3. 유사도 모듈 (Similarity Module)
+3. 스켈레톤 추출 
 
-4. [to-be] Caption 생성 및 웹구현 
+4. 유사도 모듈 
+
+5. [to-be] Caption 생성 및 웹구현 
 
 
 ## 📂 Folder Structure
