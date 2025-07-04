@@ -1,6 +1,6 @@
 # Kpop Dance Feedback Project PipeLine
 
-📖 프로젝트 개요
+#### 📖 프로젝트 개요
 
 엔터테인먼트 내에서 안무 선생님의 동작을 고정밀도 실시간 모션 캡처하고, <br>
 이를 연습생 및 연예인에게 즉각적으로 제공하는 피드백 시스템을 개발합니다. <br>
@@ -9,24 +9,23 @@
 
 #### 📑 목차
 
-1. 데이터 준비<br><br>
+##### 1. 데이터 준비<br><br>
 2개의 동영상 또는 youtube 영상 추출 <br>
 youtube 영상 추출 - <etc/ down_youtube.py> <br>
 
-
-3. 영상 음성 싱크 동기화<br><br>
+##### 2. 영상 음성 싱크 동기화<br><br>
 2개의 동영상의 음성 파형을 기준으로 짧은 영상 길이에 맞게 자동 동기화<br>
 <extract_keypoints / sound_sync.py><br>
 
-4. 스켈레톤 추출<br><br>
+##### 3. 스켈레톤 추출<br><br>
 2개의 동영상에서 프레임을 추출 후 yolov8n을 통해서 사람 영역 bbox로 인식 <br>
 -> media pipe로 key points 추출 후 원래 이미지 사이즈로 북구<br>
 <yolo_and_media_pose.py>
-5. 유사도 모듈<br><br>
+##### 4. 유사도 모듈<br><br>
 Procrustes 정렬, 각도 비교, 궤적 분석 등을 통해 동작 유사도 산출<br>
 기준 안무(선생님) vs 연습생 영상 비교 후 자동 피드백 캡션 생성 <similarity/><br>
 
-6. [to-be] Caption 생성 및 웹구현<br><br>
+##### 5. [to-be] Caption 생성 및 웹구현<br><br>
 자동 교정 문구 생성 : VLM gpt-4o 사용 or VLM 모델 학습<br>
 
 ## 📂 Folder Structure
@@ -59,7 +58,7 @@ requirements.txt
 
 ### 기술 스택
 
-AI·모델: MediaPipe Pose, PyTorch, DeepFace (FER)<br>
+AI·모델: MediaPipe Pose, PyTorch<br>
 영상 처리: OpenCV, NumPy<br>
 데이터 처리: pandas<br>
 스크립팅: Python<br>
