@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+    .upload-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .header__nav {
+      margin-top: 0.5rem;
+    }
+  
+    .index-container {
+      padding: 0 0.5rem;
+    }
+  }
+  

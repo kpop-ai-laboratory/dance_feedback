@@ -1,0 +1,26 @@
+.header {
+    background-color: #BEE3F8;  /* 연한 파스텔 블루 */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .header__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2D3748;  /* 짙은 그레이 */
+  }
+  
+  .header__nav a {
+    margin-left: 1.5rem;
+    color: #2D3748;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .header__nav a:hover {
+    text-decoration: underline;
+  }
+  

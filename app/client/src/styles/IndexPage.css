@@ -1,0 +1,52 @@
+.index-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .index-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #2D3748;
+  }
+  
+  .upload-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .upload-card {
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .upload-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #2D3748;
+  }
+  
+  .file-input-wrapper {
+    border: 2px dashed #CBD5E0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #A0AEC0;
+    margin-bottom: 1rem;
+  }
+  
+  .upload-btn {
+    display: inline-block;
+    background-color: #90CDF4;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+  }
+  
