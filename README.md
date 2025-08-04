@@ -6,7 +6,7 @@ K-POP 댄스 연습생과 아티스트를 위한 **실시간 동작 분석 및 �
 
 <img width="800" height="450" alt="index" src="https://github.com/user-attachments/assets/5c8d556e-b29e-4270-a767-905a8691a3af" />
 
-<br/> <br/> <br/> 
+<br/> <br/>
 
 ## 📌 주요 기능
 
