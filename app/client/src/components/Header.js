@@ -1,30 +1,21 @@
 // src/components/Header.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext'
 import axios from 'axios';
 import MAS from '../assets/MAS.png';
 
 export default function Header() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { currentUser, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // 마운트 시 한 번만 인증 상태 확인
-  useEffect(() => {
-    axios
-      .get('/auth/me', { withCredentials: true })
-      .then(res => {
-        setIsAuthenticated(res.data.authenticated);
-      })
-      .catch(() => {
-        setIsAuthenticated(false);
-      });
-  }, []);
 
   // 로그아웃 핸들러
   const handleLogout = async () => {
     try {
       await axios.post('/auth/logout', {}, { withCredentials: true });
-      setIsAuthenticated(false);
+      // setIsAuthenticated(false);
+      logout();
       navigate('/'); // 로그아웃 후 원하는 경로로 리다이렉트
     } catch (err) {
       console.error('Logout error', err);
@@ -33,9 +24,11 @@ export default function Header() {
 
   const routes = [
     { label: 'Home',    path: '/' },
+    { label: 'About',    path: '/about' },
     { label: 'Upload',  path: '/upload' },
     { label: 'FrameReview',  path: '/frame-review' },
     { label: 'SequenceReview', path: '/sequence-review' },
+    { label: 'board', path: '/board' }
   ];
 
   return (
@@ -61,7 +54,7 @@ export default function Header() {
         ))}
 
         {/* 로그인 상태에 따라 Login / Logout */}
-        {!isAuthenticated ? (
+        {!currentUser ? (
           <NavLink to="/login">Login</NavLink>
         ) : (
           <button

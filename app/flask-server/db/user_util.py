@@ -12,7 +12,7 @@ def get_connection():
     )
 
 #  회원 등록 함수
-def insert_user(email, passwd, username):
+def insert_user(email, passwd, username, role='user'):
     try:
         conn = get_connection()
         cursor = conn.cursor()
@@ -21,7 +21,8 @@ def insert_user(email, passwd, username):
         INSERT INTO users (email, passwd, username, usertype, regdate)
         VALUES (%s, %s, %s, %s, %s)
         """
-        cursor.execute(sql, (email, passwd, username, 0, date.today()))
+
+        cursor.execute(sql, (email, passwd, username, role, date.today()))
         conn.commit()
         return True  # 성공 시 True 반환
 

@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { AuthProvider  } from '../src/context/AuthContext'
 
 import './index.css';       // ← Tailwind 지시문이 담긴 파일
 import './styles/responsive.css';  // 기존에 만드신 반응형 CSS
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+    <AuthProvider>
     <App />
-  </React.StrictMode>
+    </AuthProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

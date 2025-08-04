@@ -47,6 +47,9 @@ export default function VideoUploadCard({
 
   // 파일 유무에 따라 드롭존 높이 조절
   const dropZoneHeight = file ? 'h-12' : 'h-64';
+  const dropZoneStateClass = isDragging
+  ? 'border-pink-400 bg-white/10'
+  : '';
 
   return (
     <div className={`p-4 rounded-xl ${className}`}>
@@ -86,7 +89,7 @@ export default function VideoUploadCard({
         className={`
           border-2 border-pink-200 border-dashed
           rounded-lg
-          ${dropZoneHeight}   /* 동적 높이 */
+          ${dropZoneHeight} ${dropZoneStateClass}
           px-4 mb-4
           flex items-center justify-center
           text-pink-400 font-medium
@@ -96,6 +99,7 @@ export default function VideoUploadCard({
         onDragOver={handleDragOver}
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
       >
         {file ? '파일 교체' : '파일 업로드'}
       </label>

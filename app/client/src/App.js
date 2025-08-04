@@ -2,18 +2,21 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import IndexPage2 from './pages/IndexPage2';
-import Upload2 from './pages/Upload2';
-import TestPage from './pages/TestPage';
-import SecTestPage from './pages/SecTestPage';
-import TestViewPage from './pages/TestViewPage';
-import TestFeedbackPage from './pages/TestFeedbackPage';
+import IndexPage from './pages/IndexPage';
+import Upload from './pages/Upload';
+import About from './pages/About';
+
 import CompareResult from './components/CompareResult';
-import CompareResult1 from './components/CompareResult1';
+import SequenceReviewPage from './pages/SequenceReviewPage'
+import DemoSeq from './components/DemoSeq';
+
+
 import DemoResult from './components/DemoResult'
-import DemoResult1 from './components/DemoResult1'
 import Login from './components/Login';
 import Register from './components/Register';
+import BoardList   from './pages/BoardList';
+import BoardDetail from './pages/BoardDetail';
+import BoardForm   from './pages/BoardForm';
 
 
 
@@ -28,13 +31,28 @@ import Register from './components/Register';
         
         <main className="flex-grow">
           <Routes> 
-          <Route path="/"       element={<IndexPage2 />} /> 
-          <Route path="/upload"       element={<Upload2 />} /> 
-          <Route path="/result" element={<CompareResult1 />} />        
+          <Route path="/"       element={<IndexPage />} /> 
+          <Route path="/about"       element={<About />} /> 
+          <Route path="/upload"       element={<Upload />} /> 
+          
+          
+          <Route path="/result" element={<CompareResult />} />      
+          <Route path="/sequence-result"  element={<SequenceReviewPage />} />    
+          
+          
+          
           {/* 시연용  review */}
-          <Route path="/frame-review"       element={<DemoResult1 />} /> 
+          <Route path="/frame-review"       element={<DemoResult />} /> 
+          <Route path="/sequence-review" element={<DemoSeq />} /> 
+
+
           <Route path="/login"       element={<Login />} /> 
           <Route path="/register"       element={<Register />} /> 
+          
+          <Route path="/board"            element={<BoardList />} />
+          <Route path="/board/new"        element={<BoardForm />} />
+          <Route path="/board/:id"        element={<BoardDetail />} />
+          <Route path="/board/:id/edit"   element={<BoardForm />} />
           </Routes>
           </main>
         <Footer />

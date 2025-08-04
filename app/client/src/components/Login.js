@@ -1,13 +1,16 @@
-// src/components/Login.jsx
-import React, { useState } from 'react';
+// src/components/Login.js
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, NavLink } from 'react-router-dom';
+import { AuthContext  } from '../context/AuthContext'
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -19,6 +22,7 @@ export default function Login() {
       );
       if (res.data.success) {
         console.log(res.data)
+        login(res.data.user);
         navigate('/');
       }
     } catch (err) {

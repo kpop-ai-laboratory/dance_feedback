@@ -17,6 +17,9 @@ export default function IndexPage2() {
   const [downloadedVideo, setDownloadedVideo] = useState(null);
   const [isVideoRevealed, setIsVideoRevealed] = useState(false);
   const progressRef = useRef(null);
+
+  const flaskHost = window.location.hostname;
+
   const navigate = useNavigate();
 
   const extractYouTubeId = (url) => {
@@ -38,16 +41,23 @@ export default function IndexPage2() {
       setProgress(100);
       const vid = extractYouTubeId(videoUrl);
       const thumb = vid ? `https://img.youtube.com/vi/${vid}/hqdefault.jpg` : null;
-      const path = `http://localhost:5000${res.data.url}`;
-      setDownloadedVideo({ thumbnail: thumb, localUrl: path });
-      setIsVideoRevealed(false);
+      //const path = `http://localhost:5000${res.data.url}`;
+      const mediaUrl = res.data.url; 
+      console.log("res.data",res.data)
+      
+     const path = `http://${flaskHost}:5000${mediaUrl}`;
 
-      const a = document.createElement('a');
-      a.href = path;
-      a.download = 'downloaded.mp4';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+
+      
+     setDownloadedVideo({ thumbnail: thumb, localUrl: path });
+     setIsVideoRevealed(false);
+
+     const a = document.createElement('a');
+     a.href = path;
+     a.download = 'downloaded.mp4';
+     document.body.appendChild(a);
+     a.click();
+     document.body.removeChild(a);
     } catch {
       clearInterval(progressRef.current);
       alert('다운로드 중 오류가 발생했습니다');
